@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "EmpList";
+}
+
+<h1>Empolyee List</h1>
+@if (ViewData["EmpList"] != null)
+{
+    <table class="table">
+        <tr>
+            <th>Employe Id</th>
+            <th>Employe Name</th>
+            <th>Employe Salary</th>
+        </tr>
+        @foreach (Employe p in (IEnumerable<Employe>)ViewData["EmpList"])
+        {
+                    <tr>
+                        <td>@p.EmpId</td>
+                        <td>@p.EmpName</td>
+                        <td>@p.EmpSalary</td>
+                    </tr>
+        }
+</table>
+}
+<h3>Employee List Using View Bag</h3>
+
+
+        <table class ="table">
+            <tr>
+                <th>Employe Id</th>
+                <th>Employe Name</th>
+                <th>Employe Salary</th>
+            </tr>
+    @foreach (Employe p in ViewBag.EmpList)
+    {
+                        <tr>
+                            <td>@p.EmpId</td>
+                            <td>@p.EmpName</td>
+                            <td>@p.EmpSalary</td>
+                        </tr>
+    }
+        </table>
+
+
